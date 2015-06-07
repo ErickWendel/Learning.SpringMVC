@@ -1,0 +1,46 @@
+package com.callsystem.business;
+
+import java.util.List;
+
+import com.callsystem.base.Base;
+import com.callsystem.dao.UsuarioDAO;
+import com.callsystem.model.UsuarioVO;
+
+public class UsuarioBUS implements Base<UsuarioVO> {
+
+	
+	UsuarioDAO _dao = new UsuarioDAO();
+	@Override
+	public List<UsuarioVO> listar() {
+		 return _dao.listar();
+	}
+
+	@Override
+	public void cadastrar(UsuarioVO item) {
+		 return _dao.cadastrar(item);
+		
+	}
+
+	@Override
+	public void deletar(UsuarioVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void atualiza(UsuarioVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public UsuarioVO pesquisarPorId(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	 
+
+	 
+
+}

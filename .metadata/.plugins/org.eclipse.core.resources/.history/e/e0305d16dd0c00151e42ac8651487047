@@ -1,0 +1,34 @@
+package com.callsystem.dao.base;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.callsystem.base.Base;
+
+public abstract class BaseDAO<T> implements Base<T>{
+	Session _sessao = null;
+	Transaction _transacao = null;
+	Query _consulta = null;
+	List<T> _resultado = null;
+	
+	
+	
+	public List<T> Listar(){
+		
+		
+		return null;
+	}
+	
+	public void Cadastrar(T item){
+		
+	};
+	public void Deletar(T item){
+		
+	};
+	public void Atualizar(T item){
+		
+	};
+}

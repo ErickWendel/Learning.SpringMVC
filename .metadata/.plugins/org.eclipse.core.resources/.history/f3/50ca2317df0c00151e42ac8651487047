@@ -1,0 +1,34 @@
+package com.callsystem.business;
+
+import java.util.List;
+
+import com.callsystem.base.Base;
+import com.callsystem.model.AdministradorVO;
+
+public class AdministradorBUS implements Base<AdministradorVO> {
+
+	@Override
+	public List<AdministradorVO> Listar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void Cadastrar(AdministradorVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Deletar(AdministradorVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Atualizar(AdministradorVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

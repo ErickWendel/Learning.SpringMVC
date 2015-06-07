@@ -1,0 +1,8 @@
+package com.callsystem.da1;
+
+import com.callsystem.base.Base;
+import com.callsystem.model.RamalVO;
+
+public interface IRamal extends Base<RamalVO> {
+
+}

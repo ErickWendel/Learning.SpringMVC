@@ -1,0 +1,21 @@
+package com.callsystem.model.enums;
+ 
+import javax.persistence.Entity; 
+
+ 
+@Entity
+public enum PerfilEnum {
+	ADMINISTRADOR(1), 
+	USUARIO(2);
+	
+	private int perfil;
+	
+	
+	PerfilEnum(int perfil){
+		this.perfil = perfil;
+	}
+	
+	public int getValor(){
+		return perfil;
+	}
+}

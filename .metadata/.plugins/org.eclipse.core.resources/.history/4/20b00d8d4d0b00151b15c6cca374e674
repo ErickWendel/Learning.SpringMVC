@@ -1,0 +1,10 @@
+package com.callsystem.dao.base;
+
+import java.util.List;
+
+import com.callsystem.base.Base;
+
+public abstract BaseDAO<T> implements Base<T>{
+ 
+
+}

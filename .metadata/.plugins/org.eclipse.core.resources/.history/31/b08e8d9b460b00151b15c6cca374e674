@@ -1,0 +1,14 @@
+package com.spring.callsystem.model.enums;
+
+public enum PerfilEnum {
+	private int perfil;
+	
+	
+	PerfilEnum(int perfil){
+		perfil = perfil;
+	}
+	
+	public int getValor(){
+		return perfil;
+	}
+}

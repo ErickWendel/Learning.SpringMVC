@@ -1,0 +1,7 @@
+package com.spring.callsystem.dao.contracts;
+
+import com.spring.callsystem.model.AdministradorVO;
+
+public interface IAdministrador extends Base<AdministradorVO> {
+
+}

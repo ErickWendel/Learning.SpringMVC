@@ -1,0 +1,15 @@
+package com.callsystem.business;
+
+import java.util.List;
+
+import com.callsystem.base.Base;
+import com.callsystem.dao.UsuarioDAO;
+import com.callsystem.model.UsuarioVO;
+
+public class UsuarioBUS implements Base<UsuarioVO> {
+
+	 
+
+	 
+
+}

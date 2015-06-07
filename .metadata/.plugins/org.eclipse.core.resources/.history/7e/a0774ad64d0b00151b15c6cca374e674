@@ -1,0 +1,7 @@
+package com.callsystem.dao.base;
+
+import com.callsystem.base.Base;
+
+public abstract class BaseDAO<T> implements Base<T>{
+
+}

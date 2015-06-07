@@ -1,0 +1,21 @@
+package com.callsystem.dao;
+
+import java.util.List;
+
+import com.callsystem.base.Base;
+import com.callsystem.dao.base.BaseDAO;
+import com.callsystem.database.ConnectionFactory;
+import com.callsystem.model.AdministradorVO;
+
+public class AdministradorDAO extends BaseDAO<AdministradorVO>{
+
+	@Override
+	public List<AdministradorVO> listar(String query) {
+		return super.listar("from tb_administrador");
+		
+	}
+
+
+	 
+
+}

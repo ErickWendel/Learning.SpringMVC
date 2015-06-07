@@ -1,0 +1,5 @@
+package com.callsystem.dao;
+
+public class UsuarioDAO {
+
+}

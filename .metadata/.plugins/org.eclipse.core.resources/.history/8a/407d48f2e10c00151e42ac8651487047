@@ -1,0 +1,103 @@
+package com.callsystem.dao.base;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.callsystem.base.Base;
+import com.callsystem.database.ConnectionFactory;
+
+public abstract class BaseDAO<T> implements Base<T> {
+	Session _sessao = null;
+	Transaction _transacao = null;
+	Query _consulta = null;
+	List<T> _resultado = null;
+
+	public List<T> listar(String query) {
+		try {
+			_sessao = ConnectionFactory.getSessionFactory();
+			_transacao = _sessao.beginTransaction();
+			_consulta = _sessao.createQuery(query);
+			_resultado = _consulta.list();
+			return _resultado;
+
+		} 
+		catch(Exception ex){
+			System.out.println("Erro ao Listar: " + ex.getMessage());
+			return null;
+		}
+		
+		finally {
+			this.fecharConnection();
+		}
+
+	}
+
+	public void cadastrar(T item) {
+		try{
+			_sessao = ConnectionFactory.getSessionFactory();
+			_transacao = _sessao.beginTransaction();
+			_sessao.save(item);
+			_transacao.commit();
+		}
+		catch(Exception ex){
+			System.out.println("Erro ao cadastrar: " + ex.getMessage());
+		}
+		finally{
+			this.fecharConnection();
+		}
+		
+	};
+
+	public void deletar(T item) {
+		try{
+			_sessao = ConnectionFactory.getSessionFactory();
+			_transacao = _sessao.beginTransaction();
+			_sessao.delete(item);
+			_transacao.commit();
+		}
+		catch(Exception ex){
+			System.out.println("Erro ao cadastrar: " + ex.getMessage());
+		}
+		finally{
+			this.fecharConnection();
+		}
+	};
+
+	public void atualizar(T item) {
+		try{
+			_sessao = ConnectionFactory.getSessionFactory();
+			_transacao = _sessao.beginTransaction();
+			_sessao.update(item);
+			_transacao.commit();
+		}
+		catch(Exception ex){
+			System.out.println("Erro ao cadastrar: " + ex.getMessage());
+		}
+		finally{
+			this.fecharConnection();
+		}	
+	};
+	
+	public T pesquisarPorId(String query, int id){
+		_sessao = ConnectionFactory.getSessionFactory();
+		_transacao = _sessao.beginTransaction();
+		
+		_consulta = _sessao.createQuery(query + "= :parametro");
+		_consulta.setInteger("parametro", id);
+		T item = (T) _consulta.uniqueResult();
+		_transacao.commit();
+		
+		return item;
+		
+	}
+	
+	private void fecharConnection(){
+		if (_sessao != null)
+			_sessao.close();
+	}
+	
+	
+}

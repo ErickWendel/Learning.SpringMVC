@@ -1,0 +1,7 @@
+package com.spring.callsystem.business;
+
+import com.spring.callsystem.base.Base;
+
+public class AdministradorBUS implements Base<T> {
+
+}

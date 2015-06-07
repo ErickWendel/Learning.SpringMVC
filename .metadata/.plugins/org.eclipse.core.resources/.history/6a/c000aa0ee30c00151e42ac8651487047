@@ -1,0 +1,8 @@
+package com.callsystem.business;
+
+import com.callsystem.base.Base;
+
+public abstract class BaseBUS<T> implements Base<T> {
+
+	
+}

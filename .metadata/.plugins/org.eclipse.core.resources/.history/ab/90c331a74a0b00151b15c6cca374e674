@@ -1,0 +1,10 @@
+package com.spring.callsystem.base;
+
+import java.util.List;
+
+public interface Base<T>{
+	List<T> Listar();
+	void Cadastrar(T item);
+	void Deletar(T item);
+	void Atualizar(T item);
+}

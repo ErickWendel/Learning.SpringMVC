@@ -1,0 +1,14 @@
+package com.callsystem.model;
+
+import java.io.Serializable;
+
+import com.callsystem.model.enums.PerfilEnum;
+
+public class AdministradorVO extends PessoaVOimplements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public PerfilEnum getPerfil() {
+		return PerfilEnum.ADMINISTRADOR;
+	}
+}

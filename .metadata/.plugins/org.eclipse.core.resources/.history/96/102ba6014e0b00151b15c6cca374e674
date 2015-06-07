@@ -1,0 +1,12 @@
+package com.callsystem.dao.base;
+
+import java.util.List;
+
+import com.callsystem.base.Base;
+
+public abstract class BaseDAO<T> implements Base<T>{
+
+	public List<T> Listar(){
+		return null;
+	}
+}

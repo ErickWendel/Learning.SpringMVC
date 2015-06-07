@@ -1,0 +1,5 @@
+package com.callsystem.business;
+
+public abstract class BaseBUS<T> : Base<T> {
+
+}

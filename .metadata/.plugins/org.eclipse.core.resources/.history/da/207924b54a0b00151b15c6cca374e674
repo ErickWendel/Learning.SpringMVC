@@ -1,0 +1,21 @@
+package com.spring.callsystem.model;
+
+public class RamalVO {
+
+	private int Id;
+	private String Numero;
+	
+	
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
+	public String getNumero() {
+		return Numero;
+	}
+	public void setNumero(String numero) {
+		Numero = numero;
+	}
+}

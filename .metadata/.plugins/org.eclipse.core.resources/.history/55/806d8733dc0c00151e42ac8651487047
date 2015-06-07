@@ -1,0 +1,22 @@
+package com.callsystem.database;
+
+import org.hibernate.Session;
+ 
+
+public class ConnectionFactory {
+	public static void main(String[] fit)
+	{
+		Session sessao = null;
+		try
+		{
+			System.out.println("Sessão aberta!");
+			sessao = HibernateUtil.getSessionFactory().openSession();
+			System.out.println("Conectado no Banco!");
+		}
+		finally
+		{
+			sessao.close();
+			System.out.println("Sessão finalizada!");
+		}
+	}
+}

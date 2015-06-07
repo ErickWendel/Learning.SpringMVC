@@ -1,0 +1,19 @@
+package com.callsystem.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.callsystem.model.enums.PerfilEnum;
+@Entity
+@Table(name="tb_usuario")
+public class UsuarioVO extends PessoaVO implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public PerfilEnum getPerfil() {
+		
+		return PerfilEnum.USUARIO;
+	}
+}

@@ -1,0 +1,36 @@
+package com.callsystem.model;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Entity;
+
+
+@Entity
+@Table(name="tb_ramal")
+public class RamalVO {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", nullable = false, unique = true)
+	private int Id;
+	
+	@Column(name = "DS_NUMERO", nullable = false)
+	private String Numero;
+	
+	
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
+	public String getNumero() {
+		return Numero;
+	}
+	public void setNumero(String numero) {
+		Numero = numero;
+	}
+}

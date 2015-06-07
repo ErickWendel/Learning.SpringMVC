@@ -1,0 +1,5 @@
+package com.spring.callsystem.model;
+
+public class AdministradorVO {
+
+}

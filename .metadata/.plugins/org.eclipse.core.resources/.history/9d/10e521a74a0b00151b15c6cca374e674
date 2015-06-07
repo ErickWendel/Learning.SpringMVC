@@ -1,0 +1,34 @@
+package com.spring.callsystem.business;
+
+import java.util.List;
+
+import com.spring.callsystem.base.Base;
+import com.spring.callsystem.model.UsuarioVO;
+
+public class UsuarioBUS implements Base<UsuarioVO> {
+
+	@Override
+	public List<UsuarioVO> Listar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void Cadastrar(UsuarioVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Deletar(UsuarioVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Atualizar(UsuarioVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

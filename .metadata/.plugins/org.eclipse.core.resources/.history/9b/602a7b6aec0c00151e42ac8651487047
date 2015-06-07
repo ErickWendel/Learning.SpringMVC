@@ -1,0 +1,17 @@
+package com.spring.callsystem;
+
+import com.callsystem.model.UsuarioVO;
+
+public class Test {
+
+	public static void main(String[] args) {
+		UsuarioVO user = new UsuarioVO();
+		user.setNome("Erick");
+		user.setEmail("e@e.com");
+		user.setPerfil(user.getPerfil());
+		
+		
+		
+	}
+	
+}

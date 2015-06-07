@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.spring.callsystem.model.PerfilVO"/>
+<fullyQualifiedTypeName name="java.lang.Enum"/>
+<fullyQualifiedTypeName name="com.spring.callsystem.model.PerfilEnum"/>
+<fullyQualifiedTypeName name="com.spring.callsystem.model.PessoaVO"/>
+<fullyQualifiedTypeName name="com.spring.callsystem.model.enums.PerfilEnum"/>
+<fullyQualifiedTypeName name="com.spring.callsystem.dao.contracts.Base"/>
+<fullyQualifiedTypeName name="com.spring.callsystem.model.UsuarioVO"/>
+<fullyQualifiedTypeName name="com.spring.callsystem.model.AdministradorVO"/>
+<fullyQualifiedTypeName name="com.spring.callsystem.base.Base"/>
+<fullyQualifiedTypeName name="com.spring.callsystem.model.RamalVO"/>
+<fullyQualifiedTypeName name="com.callsystem.model.AdministradorVO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.callsystem.dao.base.BaseDAO"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="org.hibernate.Transaction"/>
+<fullyQualifiedTypeName name="org.hibernate.Query"/>
+<fullyQualifiedTypeName name="com.callsystem.database.ConnectionFactory"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="com.callsystem.business.BaseBUS"/>
+<fullyQualifiedTypeName name="com.callsystem.base.Base"/>
+<fullyQualifiedTypeName name="com.callsystem.dao.UsuarioDAO"/>
+<fullyQualifiedTypeName name="com.callsystem.model.RamalVO"/>
+<fullyQualifiedTypeName name="com.callsystem.dao.RamalDAO"/>
+<fullyQualifiedTypeName name="com.callsystem.dao.AdministradorDAO"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.Enumerated"/>
+<fullyQualifiedTypeName name="javax.persistence.EnumType"/>
+<fullyQualifiedTypeName name="javax.persistence.Table"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.Embedded"/>
+<fullyQualifiedTypeName name="javax.persistence.Embeddable"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
+<fullyQualifiedTypeName name="com.callsystem.model.UsuarioVO"/>
+<fullyQualifiedTypeName name="com.callsystem.model.enums.PerfilEnum"/>
+<fullyQualifiedTypeName name="com.callsystem.business.UsuarioBUS"/>
+<fullyQualifiedTypeName name="com.callsystem.model.PessoaVO"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+</qualifiedTypeNameHistroy>

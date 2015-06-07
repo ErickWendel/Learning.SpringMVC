@@ -1,0 +1,43 @@
+package com.callsystem.business;
+
+import java.util.List;
+
+import com.callsystem.base.Base;
+import com.callsystem.dao.UsuarioDAO;
+import com.callsystem.model.RamalVO;
+import com.callsystem.model.RamalVO;
+
+public class RamalBUS implements Base<RamalVO>{
+
+	RamalVO _dao = new RamalVO();
+	@Override
+	public List<RamalVO> listar() {
+		 return _dao.listar();
+	}
+
+	@Override
+	public void cadastrar(RamalVO item) {
+		  _dao.cadastrar(item);
+		
+	}
+
+	@Override
+	public void deletar(RamalVO item) {
+		 _dao.deletar(item);
+		
+	}
+
+	@Override
+	public void atualizar(RamalVO item) {
+		 _dao.deletar(item);
+		
+	}
+
+	@Override
+	public RamalVO pesquisarPorId(int id) {
+		// TODO Auto-generated method stub
+		return  _dao.pesquisarPorId(id);
+	}
+	 
+
+}

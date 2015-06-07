@@ -1,0 +1,5 @@
+package com.spring.callsystem.dao.contracts;
+
+public interface IAdministrador {
+
+}

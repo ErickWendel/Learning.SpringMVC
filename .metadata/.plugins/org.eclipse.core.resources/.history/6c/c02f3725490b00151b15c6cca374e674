@@ -1,0 +1,7 @@
+package com.spring.callsystem.dao.contracts;
+
+import com.spring.callsystem.model.RamalVO;
+
+public interface IRamal extends Base<RamalVO> {
+
+}

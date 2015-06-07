@@ -1,0 +1,7 @@
+package com.spring.callsystem.dao.contracts;
+
+import com.spring.callsystem.model.UsuarioVO;
+
+public interface IUsuario extends Base<UsuarioVO>{
+	
+}

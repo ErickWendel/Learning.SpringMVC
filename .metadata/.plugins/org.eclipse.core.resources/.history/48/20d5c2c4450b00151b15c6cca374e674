@@ -1,0 +1,8 @@
+package com.spring.callsystem.model;
+
+public abstract class PessoaVO {
+	private int Id;
+	private String Nome;
+	private String Email;
+	private PerfilVO perfil;
+}

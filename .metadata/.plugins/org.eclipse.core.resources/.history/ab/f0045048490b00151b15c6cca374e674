@@ -1,0 +1,5 @@
+package com.spring.callsystem.business;
+
+public class UsuarioBUS {
+
+}

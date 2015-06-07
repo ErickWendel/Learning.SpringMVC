@@ -1,0 +1,22 @@
+package com.callsystem.model.enums;
+
+import javax.persistence.Embeddable;
+import javax.persistence.Table;
+
+@Embeddable
+
+public enum PerfilEnum {
+	ADMINISTRADOR(1), 
+	USUARIO(2);
+	
+	private int perfil;
+	
+	
+	PerfilEnum(int perfil){
+		this.perfil = perfil;
+	}
+	
+	public int getValor(){
+		return perfil;
+	}
+}

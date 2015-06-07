@@ -1,0 +1,25 @@
+package com.callsystem.dao;
+
+import java.util.List;
+
+import com.callsystem.base.Base;
+import com.callsystem.dao.base.BaseDAO;
+import com.callsystem.model.AdministradorVO;
+
+public class AdministradorDAO extends BaseDAO<AdministradorVO>{
+
+	@Override
+	public List<AdministradorVO> listar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void atualiza(AdministradorVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	 
+
+}

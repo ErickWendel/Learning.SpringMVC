@@ -1,0 +1,34 @@
+package com.callsystem.business;
+
+import java.util.List;
+
+import com.callsystem.base.Base;
+import com.callsystem.model.RamalVO;
+
+public class RamalBUS implements Base<RamalVO>{
+
+	@Override
+	public List<RamalVO> listar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void cadastrar(RamalVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deletar(RamalVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Atualizar(RamalVO item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.spring.callsystem.model;
+
+import com.spring.callsystem.model.enums.PerfilEnum;
+
+public class AdministradorVO extends PessoaVO{
+
+	@Override
+	public PerfilEnum getPerfil() {
+		return PerfilEnum.ADMINISTRADOR;
+	}
+}

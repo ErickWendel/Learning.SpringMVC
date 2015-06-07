@@ -1,0 +1,6 @@
+package com.spring.callsystem.model.enums;
+
+public enum PerfilEnum {
+
+	
+}

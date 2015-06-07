@@ -1,0 +1,50 @@
+package com.callsystem.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+ 
+
+
+@Entity
+@Table(name="tb_ramal")
+public class RamalVO implements Serializable {
+	private static final long serialVersionUID = 1L;
+		
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", nullable = false, unique = true)
+	private int Id;
+	
+	@Column(name = "DS_NUMERO", nullable = false)
+	private String Numero;
+	
+	@Embedded
+	@Column(name = "ID_USUARIO", nullable = false)
+	private PessoaVO Pessoa;
+	
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
+	public String getNumero() {
+		return Numero;
+	}
+	public void setNumero(String numero) {
+		Numero = numero;
+	}
+	public PessoaVO getPessoa() {
+		return Pessoa;
+	}
+	public void setPessoa(PessoaVO pessoa) {
+		this.Pessoa = pessoa;
+	}
+}
