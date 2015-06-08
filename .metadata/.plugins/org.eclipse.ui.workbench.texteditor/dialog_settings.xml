@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="try(_sessao = ConnectionFactory.getSessionFactory()){" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="spring-boot-starter-logging"/>
 			<item value="try(_sessao = ConnectionFactory.getSessionFactory()){"/>
 			<item value="slf4j"/>
 		</list>

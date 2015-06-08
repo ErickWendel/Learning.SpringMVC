@@ -1,0 +1,10 @@
+$(function (){
+	
+	function init(){
+		localStorage.clear();
+		console.log("iniciando...");
+	} 
+
+	init();
+});
+

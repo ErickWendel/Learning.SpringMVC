@@ -1,0 +1,10 @@
+$(function (){
+	
+	function init(){
+		sessionStorage.clear();
+		console.log("iniciando...");
+	} 
+
+	init();
+});
+

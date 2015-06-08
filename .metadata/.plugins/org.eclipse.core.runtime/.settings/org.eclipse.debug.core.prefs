@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n<expression enabled\="true" text\="cfg.configure(&quot;hibernate.cfg.xml&quot;)"/>\r\n</watchExpressions>\r\n
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n<expression enabled\="true" text\="cfg.configure(&quot;hibernate.cfg.xml&quot;)"/>\r\n<expression enabled\="true" text\="user.getSenha()"/>\r\n<expression enabled\="true" text\="user.getNome() \!\= null &amp;&amp; user.getSenha() \!\= null"/>\r\n<expression enabled\="true" text\="user.getEmail() \!\= null &amp;&amp; user.getSenha() \!\= null"/>\r\n<expression enabled\="true" text\="item"/>\r\n</watchExpressions>\r\n

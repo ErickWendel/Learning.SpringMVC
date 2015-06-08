@@ -1,0 +1,10 @@
+
+	
+	function init(){
+		sessionStorage["auth"] = undefined;
+		console.log("iniciando...");
+	} 
+
+	init();
+ 
+

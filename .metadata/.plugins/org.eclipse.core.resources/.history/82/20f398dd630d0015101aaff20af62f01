@@ -1,0 +1,48 @@
+// lazyload config
+var path= window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+path = path + "/resources/";
+ 
+var jp_config = {
+  easyPieChart:   [   path+'/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.fill.js'],
+  sparkline:      [   path+'bower_components/jquery.sparkline/dist/jquery.sparkline.retina.js'],
+  plot:           [   path+'bower_components/flot/jquery.flot.js',
+                      path+'bower_components/flot/jquery.flot.pie.js', 
+                      path+'bower_components/flot/jquery.flot.resize.js',
+                      path+'bower_components/flot.tooltip/js/jquery.flot.tooltip.js',
+                      path+'bower_components/flot.orderbars/js/jquery.flot.orderBars.js',
+                      path+'bower_components/flot-spline/js/jquery.flot.spline.js'],
+  moment:         [   path+'bower_components/moment/moment.js'],
+  screenfull:     [   path+'bower_components/screenfull/dist/screenfull.min.js'],
+  slimScroll:     [   path+'bower_components/slimscroll/jquery.slimscroll.min.js'],
+  sortable:       [   path+'bower_components/html5sortable/jquery.sortable.js'],
+  nestable:       [   path+'bower_components/nestable/jquery.nestable.js',
+                      path+'bower_components/nestable/jquery.nestable.css'],
+  filestyle:      [   path+'bower_components/bootstrap-filestyle/src/bootstrap-filestyle.js'],
+  slider:         [   path+'bower_components/bootstrap-slider/bootstrap-slider.js',
+                      path+'bower_components/bootstrap-slider/bootstrap-slider.css'],
+  chosen:         [   path+'bower_components/chosen/chosen.jquery.min.js',
+                      path+'bower_components/bootstrap-chosen/bootstrap-chosen.css'],
+  TouchSpin:      [   path+'bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
+                      path+'bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css'],
+  wysiwyg:        [   path+'bower_components/bootstrap-wysiwyg/bootstrap-wysiwyg.js',
+                      path+'bower_components/bootstrap-wysiwyg/external/jquery.hotkeys.js'],
+  dataTable:      [   path+'bower_components/datatables/media/js/jquery.dataTables.min.js',
+                      path+'bower_components/plugins/integration/bootstrap/3/dataTables.bootstrap.js',
+                      path+'bower_components/plugins/integration/bootstrap/3/dataTables.bootstrap.css'],
+  vectorMap:      [   path+'bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.min.js', 
+                      path+'bower_components/bower-jvectormap/jquery-jvectormap-world-mill-en.js',
+                      path+'bower_components/bower-jvectormap/jquery-jvectormap-us-aea-en.js',
+                      path+'bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.css'],
+  footable:       [   path+'bower_components/footable/dist/footable.all.min.js',
+                      path+'bower_components/footable/css/footable.core.css'],
+  fullcalendar:   [   path+'bower_components/moment/moment.js',
+                      path+'bower_components/fullcalendar/dist/fullcalendar.min.js',
+                      path+'bower_components/fullcalendar/dist/fullcalendar.css',
+                      path+'bower_components/fullcalendar/dist/fullcalendar.theme.css'],
+  daterangepicker:[   path+'bower_components/moment/moment.js',
+                      path+'bower_components/bootstrap-daterangepicker/daterangepicker.js',
+                      path+'bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css'],
+  tagsinput:      [   path+'bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
+                      path+'bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css']
+                      
+};

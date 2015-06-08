@@ -1,0 +1,34 @@
+<jsp:include page="/WEB-INF/views/shared/menu.jsp"></jsp:include>
+
+<div class="wrapper-md" ng-controller="FormDemoCtrl">
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="panel panel-default">
+				<div class="panel-heading font-bold">Basic form</div>
+				<div class="panel-body">
+					<form role="form">
+						<div class="form-group">
+						<label>Usuario</label> 
+						<input class="form-control" type="text" placeholder="Erick Wendel" disabled="">
+						</div>
+						<div class="form-group">
+							<label>Numero</label> <input type="email"
+								class="form-control" placeholder="Enter email">
+						</div>
+						<div class="form-group">
+							<label>Password</label> <input type="password"
+								class="form-control" placeholder="Password">
+						</div>
+						<div class="checkbox">
+							<label class="i-checks"> <input type="checkbox" checked
+								disabled><i></i> Check me out
+							</label>
+						</div>
+						<button type="submit" class="btn btn-sm btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<jsp:include page="/WEB-INF/views/shared/footer.jsp"></jsp:include>

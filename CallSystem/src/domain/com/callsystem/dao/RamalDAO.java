@@ -1,10 +1,8 @@
 package com.callsystem.dao;
 
 import java.util.List;
-
-import com.callsystem.base.Base;
-import com.callsystem.dao.base.BaseDAO;
-import com.callsystem.model.AdministradorVO;
+ 
+import com.callsystem.dao.base.BaseDAO; 
 import com.callsystem.model.RamalVO;
 
 public class RamalDAO extends BaseDAO<RamalVO>{

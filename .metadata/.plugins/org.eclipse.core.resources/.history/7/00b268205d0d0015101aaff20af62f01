@@ -1,0 +1,13 @@
+</section>
+	<footer></footer>
+	
+	
+	<script src="href="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+	<script src="href="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+	<script src="href="${pageContext.request.contextPath}/resources/js/ui-load.js"></script>
+	<script src="href="${pageContext.request.contextPath}/resources/js/ui-jp.config.js"></script>
+	<script src="href="${pageContext.request.contextPath}/resources/js/ui-jp.js"></script>
+	<script src="href="${pageContext.request.contextPath}/resources/js/"></script>
+	<script src="href="${pageContext.request.contextPath}/resources/js/"></script>
+</body>
+</html>

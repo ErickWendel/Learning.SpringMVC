@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.callsystem.base.Base;
 import com.callsystem.dao.RamalDAO;
-import com.callsystem.dao.UsuarioDAO;
-import com.callsystem.model.RamalVO;
 import com.callsystem.model.RamalVO;
 
 public class RamalBUS implements Base<RamalVO>{

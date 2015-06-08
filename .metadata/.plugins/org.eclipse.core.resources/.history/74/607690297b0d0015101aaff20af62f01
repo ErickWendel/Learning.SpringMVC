@@ -1,0 +1,18 @@
+function init(){
+	sessionStorage["login"] = undefined;
+	console.log("iniciando...");
+}
+
+function login(){
+	var email = document.getElementById("email").value;
+	var senha = document.getElementById("pass").value;
+	if (email != "" && senha != ""){
+		sessionStorage["login"] = btoa(email + "/" + senha );
+	} 
+	
+	 
+}
+
+
+init();
+

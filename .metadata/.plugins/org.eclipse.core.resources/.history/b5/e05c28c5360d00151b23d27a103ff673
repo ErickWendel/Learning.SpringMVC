@@ -1,0 +1,8 @@
+ 
+<jsp:include page="/WEB-INF/views/menu.jsp">
+ 
+<P>  The time on the server is ${serverTime}. </P>
+test + ${nome} 
+</body>
+</html>
+</jsp:include>

@@ -11,12 +11,15 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table; 
 
+import org.hibernate.annotations.Cascade;
+
 @Entity
 @Table(name="tb_usuario")
-public abstract class PessoaVO implements Serializable{
+public class PessoaVO implements Serializable{
 	/**
 	 * 
 	 */
@@ -37,11 +40,11 @@ public abstract class PessoaVO implements Serializable{
 	
 	@Column(name = "DS_SENHA", length = 50, nullable = false)
 	private String Senha;
-	
-	@Enumerated(EnumType.ORDINAL)
-	@Column(name = "ID_TIPO_PERFIL")
-	@OneToOne
-	private PerfilEnum perfil;
+	 
+	@OneToOne(mappedBy="pessoa")
+	@Cascade(value=org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+	@JoinColumn(name="ID_TIPO_PERFIL")
+	private PerfilVO perfil;
 
 	public int getId() {
 		return Id;
@@ -75,11 +78,16 @@ public abstract class PessoaVO implements Serializable{
 		Senha = senha;
 	}
 
-	public PerfilEnum getPerfil() {
+	public PerfilVO getPerfil() {
 		return perfil;
 	}
 
-	public void setPerfil(PerfilEnum perfil) {
+	 
+
+	public void setPerfil(PerfilVO perfil) {
 		this.perfil = perfil;
+		
 	}
+
+	
 }

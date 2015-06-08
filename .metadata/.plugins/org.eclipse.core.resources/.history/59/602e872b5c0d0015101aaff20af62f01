@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<title></title>
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
+	type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/animate.min.css"
+	type="text/css" />
+<link rel="stylesheet" href="/WEB-INF/content/font/font-awesome.min.css"
+	type="text/css" />
+<link rel="stylesheet" href="/WEB-INF/content/css/simple-line-icons.css"
+	type="text/css" />
+<link rel="stylesheet" href="/WEB-INF/content/font/font.css"
+	type="text/css" />
+<link rel="stylesheet" href="/WEB-INF/content/css/app.min.css"
+	type="text/css" />
+</head>
+<body>
+	<header>
+		<p>Meu test + ${pageContext.request.contextPath}</p>
+	</header>
+	<section>

@@ -1,0 +1,6 @@
+function init(){
+	sessionStorage["login"] = undefined;
+	
+}
+
+init();

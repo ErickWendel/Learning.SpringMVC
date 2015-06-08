@@ -1,0 +1,66 @@
+package com.callsystem.database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class ConnectionFactory {
+
+	public static Connection getConnection(){
+		String dbURL = "jdbc:mysql://localhost:3306/sampledb";
+		String username = "root";
+		String password = "secret";
+		 
+		try {
+		 
+		    Connection conn = DriverManager.getConnection(dbURL, username, password);
+		 
+		    if (conn != null) {
+		        System.out.println("Connected");
+		        return conn;
+		    }
+		    return null;
+		} catch (SQLException ex) {
+		   System.out.println(ex.getMessage());
+		}
+	}
+	
+	
+	
+	
+	
+	
+//	private static final SessionFactory sessionFactory = buildSessionFactory();
+//	
+//
+//	private static SessionFactory buildSessionFactory() {
+//		try {
+//			Configuration cfg = new Configuration();
+//			cfg.configure("hibernate.cfg.xml");
+//			SessionFactory sf = cfg.buildSessionFactory();
+//			return sf;
+//		} catch (Throwable e) {
+//			System.out
+//					.println("Criação inicial do objeto SessionFactory falhou. Erro: "
+//							+ e.getMessage());
+//			throw new ExceptionInInitializerError(e.getMessage());
+//		}
+//	}
+//
+//	public static Session getSessionFactory() {
+//		return sessionFactory.openSession();
+//	}
+//
+//	 
+//	public static void main(String[] a) {
+//
+//		System.out.println(getSessionFactory());
+//		//Session sessao = ConnectionFactory.getSessionFactory().openSession();
+//		System.out.println("Conectado no Banco!");
+//	}
+
+}

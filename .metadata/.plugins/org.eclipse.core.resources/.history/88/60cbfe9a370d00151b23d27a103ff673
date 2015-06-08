@@ -1,0 +1,6 @@
+
+<jsp:include page="/WEB-INF/views/shared/menu.jsp">${title = "erick"} </jsp:include>
+ 
+ 
+test + ${nome} 
+<jsp:include page="/WEB-INF/views/shared/footer.jsp"></jsp:include>

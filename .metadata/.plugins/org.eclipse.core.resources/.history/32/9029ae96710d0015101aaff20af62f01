@@ -1,0 +1,13 @@
+function init(){
+	sessionStorage["login"] = undefined;
+	
+}
+
+function login(){
+	document.getElementById("email")value;
+	document.getElementById("pass").value;
+	id="email"
+}
+
+
+init();

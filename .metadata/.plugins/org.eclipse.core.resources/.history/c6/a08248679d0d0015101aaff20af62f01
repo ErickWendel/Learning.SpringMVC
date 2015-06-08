@@ -1,0 +1,31 @@
+<jsp:include page="/WEB-INF/views/shared/menu.jsp"></jsp:include>
+<div id="content" class="app-content" role="main">
+	<div class="app-content-body ">
+		<div class="wrapper-md">
+			<div class="row">
+				<div class="col-sm-10">
+					<div class="panel panel-default">
+						<div class="panel-heading font-bold">Cadastrar Ramal</div>
+						<div class="panel-body">
+							<form role="form">
+								<div class="form-group">
+									<label>Usuario</label> <input class="form-control" type="text"
+										placeholder="Erick Wendel" disabled="">
+								</div>
+								<div class="form-group">
+									<label>Numero</label> <input type="email" class="form-control"
+										placeholder="Digite o número do Ramal">
+								</div>
+
+								<button type="submit" class="btn btn-sm btn-primary">Enviar</button>
+								<button type="button" class="btn btn-sm btn-info">Enviar</button>
+								
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<jsp:include page="/WEB-INF/views/shared/footer.jsp"></jsp:include>

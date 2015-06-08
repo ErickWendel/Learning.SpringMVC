@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
  
@@ -25,8 +26,7 @@ public class RamalVO implements Serializable {
 	@Column(name = "DS_NUMERO", nullable = false)
 	private String Numero;
 	
-	@OneToOne
-	@Column(name = "ID_USUARIO", nullable = false)
+	@JoinColumn(name = "ID_USUARIO", unique=true) 
 	private PessoaVO Pessoa;
 	
 	public int getId() {

@@ -13,5 +13,11 @@
    <Memento collapsed="false" type="Connection"/>
    <Memento collapsed="false" type="Advanced"/>
   </Memento>
+  <Memento type="%No text%">
+   <Memento collapsed="false" type="Mappings"/>
+   <Memento collapsed="false" type="Caches"/>
+   <Memento collapsed="false" type="Events"/>
+   <Memento type="Listeners"/>
+  </Memento>
  </TreeFormPage>
 </Layout>

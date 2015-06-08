@@ -39,3 +39,27 @@
 1433660674978	Rename method 'atualiza'
 1433663667968	Encapsulate field 'pessoa'
 1433663676851	Rename field 'pessoa'
+1433694664148	Delete element
+1433694863386	Delete element
+1433696005995	Move file
+1433696120360	Move file
+1433696352357	Delete element
+1433712453117	Move folders
+1433714363014	Delete element
+1433714843255	Move file
+1433715344783	Move file
+1433716492138	Delete element
+1433724910076	Delete element
+1433724916511	Delete element
+1433730202216	Move file
+1433732523743	Rename type 'IAdministrador'
+1433732527346	Delete element
+1433732537774	Delete element
+1433732541888	Delete element
+1433732573185	Rename type 'AdministradorDAO'
+1433732604438	Delete element
+1433732707009	Rename type 'AdministradorBUS'
+1433732711670	Delete element
+1433733323577	Encapsulate field 'Id'
+1433733327684	Encapsulate field 'Descricao'
+1433741090868	Rename resource '1433759079_phone.png'

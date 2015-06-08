@@ -1,0 +1,4 @@
+
+
+
+<jsp:include page="/WEB-INF/views/shared/footer.jsp"></jsp:include>

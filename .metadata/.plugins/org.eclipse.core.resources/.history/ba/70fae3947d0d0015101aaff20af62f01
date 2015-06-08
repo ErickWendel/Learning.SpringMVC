@@ -1,0 +1,21 @@
+$(function (){
+	
+	function init(){
+		localStorage.clear();
+		console.log("iniciando...");
+	}
+
+	$("#btn-login").click(function(){
+		var email = $("#Email").val();
+		var senha = $("#Senha").val();
+		if (email != "" && senha != ""){
+			localStorage["login"] = btoa(email + "/" + senha );
+			console.log("logado)
+		} 
+	})
+	 
+
+
+	init();
+});
+

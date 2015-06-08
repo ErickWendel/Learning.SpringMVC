@@ -1,0 +1,19 @@
+function init(){
+	localStorage.clear();
+	console.log("iniciando...");
+}
+
+function login(){
+	
+	var email = document.getElementById("Email").value;
+	var senha = document.getElementById("pass").value;
+	if (email != "" && senha != ""){
+		localStorage["login"] = btoa(email + "/" + senha );
+	} 
+	
+	 
+}
+
+
+init();
+

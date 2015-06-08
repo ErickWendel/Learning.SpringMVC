@@ -1,0 +1,8 @@
+ 
+<jsp:include page="/WEB-INF/views/shared/menu.jsp">
+ 
+ 
+test + ${nome} 
+</body>
+</html>
+</jsp:include>
