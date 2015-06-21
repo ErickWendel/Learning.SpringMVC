@@ -1,0 +1,37 @@
+package com.callsystem.dao.base;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.callsystem.database.ConnectionFactory;
+import java.sql.Connection;
+	import java.sql.Date;
+	import java.sql.PreparedStatement;
+	import java.sql.ResultSet;
+	import java.sql.SQLException;
+	import java.util.ArrayList;
+	import java.util.List;
+	   
+	 
+public abstract class BaseDAO<T> implements IBaseDAO<T> {
+ 
+	 
+	public void save(Pessoa contato){
+	 
+	 /*
+	 * Isso é uma sql comum, os ? são os parâmetros que nós vamos adicionar
+	 * na base de dados
+	 */
+	 
+	 String sql = "INSERT INTO contatos(nome,idade,dataCadastro)" +
+	 " VALUES(?,?,?)";
+	 
+	 Connection conn = null;
+	 PreparedStatement pstm = null;
+	 
+	 
+	 }
+}

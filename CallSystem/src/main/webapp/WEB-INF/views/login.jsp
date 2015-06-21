@@ -32,9 +32,7 @@
 	<div class="app app-header-fixed  ">
 
 
-		<div class="container w-xxl w-auto-xs"
-			ng-controller="SigninFormController"
-			ng-init="app.settings.container = false;">
+		<div class="container w-xxl w-auto-xs">
 			<a href class="navbar-brand block m-t">CallSytem</a>
 			<div class="m-b-lg">
 				<div class="wrapper text-center">
@@ -48,12 +46,12 @@
 					<div class="list-group list-group-sm">
 						<div class="list-group-item">
 							<input type="email" placeholder="Email" name="Email" id="Email"
-								class="form-control no-border" ng-model="user.email" required>
+								class="form-control no-border" ng-model="user.email" required value="erick.workspace@gmail.com">
 						</div>
 						<div class="list-group-item">
 							<input type="password" name="Senha" id="Senha"
 								placeholder="Password" class="form-control no-border"
-								ng-model="user.password" required>
+								value="123" required>
 						</div>
 					</div>
 					<button type="submit" onlick="login()"
@@ -61,7 +59,9 @@
 						ng-disabled='form.$invalid'>Entrar</button>
 
 					<div class="line line-dashed"></div>
-
+<button type="submit" 
+						class="btn btn-lg btn-info btn-block" id="btn-loginDirect"
+						>Entrar diretamente</button>
 				</form>
 			</div>
 

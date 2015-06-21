@@ -3,6 +3,16 @@
 	<section name="SearchDialog.ScopePart">
 		<item value="0" key="scope"/>
 	</section>
+	<section name="TextSearchPage">
+		<item value="0" key="HISTORY_SIZE"/>
+		<item value="false" key="CASE_SENSITIVE"/>
+		<item value="false" key="REG_EX_SEARCH"/>
+		<item value="false" key="WHOLE_WORD"/>
+		<item value="false" key="SEARCH_DERIVED"/>
+		<section name="EXTENSIONS">
+			<item value="*" key="0"/>
+		</section>
+	</section>
 	<section name="Search">
 		<list key="Search.processedPageIds">
 			<item value="org.eclipse.rse.internal.files.ui.search.searchPage"/>

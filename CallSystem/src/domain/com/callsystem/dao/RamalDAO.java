@@ -1,19 +1,122 @@
 package com.callsystem.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
- 
-import com.callsystem.dao.base.BaseDAO; 
+
+import com.callsystem.dao.contracts.IRamal;
+import com.callsystem.database.ConnectionFactory;
+import com.callsystem.model.PessoaVO;
 import com.callsystem.model.RamalVO;
 
-public class RamalDAO extends BaseDAO<RamalVO>{
-	
+public class RamalDAO implements IRamal {
+
+	PreparedStatement prepare = null;
+	Connection conexao = null;
+
+	public void cadastrar(RamalVO RamalVO) throws Exception {
+		String sql = "DELETE FROM `tb_ramal`  WHERE ID_USUARIO=?";
+		try (Connection conexao = ConnectionFactory.createConnectionToMySQL()) {
+			prepare = conexao.prepareStatement(sql);
+			prepare.setInt(1, RamalVO.getPessoa().getId());
+			prepare.execute();
+
+			String sqlI = "INSERT INTO `tb_ramal` (DS_NUMERO, ID_USUARIO) VALUES(?,?)";
+
+			prepare = conexao.prepareStatement(sqlI);
+			prepare.setString(1, RamalVO.getNumero());
+			prepare.setInt(2, RamalVO.getPessoa().getId());
+
+			prepare.execute();
+
+		}
+
+	}
+
+	public RamalVO pesquisarPorId(int id) throws Exception {
+		try (Connection conexao = ConnectionFactory.createConnectionToMySQL()) {
+			prepare = conexao
+					.prepareStatement("select * from `tb_ramal` where id =?");
+			ResultSet rs = prepare.executeQuery();
+
+			RamalVO contato = new RamalVO();
+			contato.setId(rs.getInt("ID"));
+			contato.setNumero(rs.getString("DS_NOME"));
+			PessoaVO pessoa = new PessoaVO();
+			pessoa.setId(rs.getInt("ID"));
+			contato.setPessoa(pessoa);
+
+			prepare.execute();
+
+			return contato;
+		}
+	}
+
 	public List<RamalVO> listar() {
-		return super.listar("from tb_ramal");
-		
+
+		String sql = "SELECT * FROM `tb_ramal`";
+
+		List<RamalVO> ramais = new ArrayList<RamalVO>();
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		ResultSet rset = null;
+
+		try {
+			conn = ConnectionFactory.createConnectionToMySQL();
+
+			pstm = conn.prepareStatement(sql);
+
+			rset = pstm.executeQuery();
+			while (rset.next()) {
+
+				RamalVO contato = new RamalVO();
+
+				contato.setId(rset.getInt("ID"));
+
+				contato.setNumero(rset.getString("DS_NUMERO"));
+				PessoaVO p = new PessoaVO();
+				p.setId(rset.getInt("ID_USUARIO"));
+				contato.setPessoa(p);
+
+				ramais.add(contato);
+			}
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
+		return ramais;
 	}
-	 
-	public RamalVO pesquisarPorId(int id){
-		return super.pesquisarPorId("from tb_ramal where id =", id);
-		
+
+	public void deletar(int id) throws Exception {
+		String sql = "DELETE FROM `tb_ramal`  WHERE ID=?";
+		try (Connection conexao = ConnectionFactory.createConnectionToMySQL()) {
+			prepare = conexao.prepareStatement(sql);
+			prepare.setInt(1, id);
+			prepare.execute();
+
+		}
 	}
+
+	public static void main(String[] args) throws Exception {
+
+		// RamalVO p = new RamalVO();
+		// p.setNumero("213");
+		// PessoaVO a = new PessoaVO();
+		// a.setId(1);
+		//
+		//
+		// p.setPessoa(a);
+		// new RamalDAO().cadastrar(p);
+		//
+		List<RamalVO> ls = new RamalDAO().listar();
+		for (RamalVO ramalVO : ls) {
+			System.out.println(ramalVO.getNumero());
+		}
+
+	}
+
 }

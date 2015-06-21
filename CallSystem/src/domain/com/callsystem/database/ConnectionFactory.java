@@ -1,38 +1,28 @@
 package com.callsystem.database;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+ 
 public class ConnectionFactory {
-
-	private static final SessionFactory sessionFactory = buildSessionFactory();
-	
-
-	private static SessionFactory buildSessionFactory() {
-		try {
-			Configuration cfg = new Configuration();
-			cfg.configure("hibernate.cfg.xml");
-			SessionFactory sf = cfg.buildSessionFactory();
-			return sf;
-		} catch (Throwable e) {
-			System.out
-					.println("Criação inicial do objeto SessionFactory falhou. Erro: "
-							+ e.getMessage());
-			throw new ExceptionInInitializerError(e.getMessage());
-		}
-	}
-
-	public static Session getSessionFactory() {
-		return sessionFactory.openSession();
-	}
-
-	 
-	public static void main(String[] a) {
-
-		System.out.println(getSessionFactory());
-		//Session sessao = ConnectionFactory.getSessionFactory().openSession();
-		System.out.println("Conectado no Banco!");
-	}
-
+   private static final String USERNAME = "root";
+   private static final String PASSWORD = "";
+   private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/callsystem";
+  
+   public static Connection createConnectionToMySQL() throws Exception{
+      Class.forName("com.mysql.jdbc.Driver"); 
+ 
+      Connection connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
+ 
+      return connection;
+   }
+   public static void main(String[] args) throws Exception{
+ 
+      Connection con = createConnectionToMySQL();
+ 
+      if(con != null){
+         System.out.println("Conexão obtida com sucesso!" + con);
+         con.close();
+      }
+ 
+   }
 }

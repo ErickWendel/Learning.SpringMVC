@@ -1,0 +1,9 @@
+package com.callsystem.dao.contracts;
+
+ 
+public interface IPessoa{
+	PessoaVO cadastrar();
+	PessoaVO pesquisarPorId();
+	PessoaVO getLogin(); 
+	
+}

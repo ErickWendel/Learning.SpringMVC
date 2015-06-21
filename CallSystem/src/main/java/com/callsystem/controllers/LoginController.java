@@ -6,7 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;  
-import com.callsystem.model.PessoaVO; 
+ 
+
+import com.callsystem.dao.PessoaDAO;
+import com.callsystem.model.PessoaVO;  
 
 /**
  * Handles requests for the application home page.
@@ -24,8 +27,12 @@ public class LoginController {
 	public String login(@ModelAttribute("user") PessoaVO user) 
 	{
 		try{
+			
 			if(user.getEmail() != null && user.getSenha() != null){
-				return "redirect:listar";
+				PessoaDAO pessoa = new PessoaDAO();
+				pessoa.getLogin(user.getEmail(), user.getSenha());
+				
+				return "redirect:listarUsuarios";
 			} 
 			return "login";
 		}

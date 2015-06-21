@@ -1,0 +1,55 @@
+package com.callsystem.dao.base;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.callsystem.database.ConnectionFactory;
+import com.callsystem.model.PessoaVO;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+	   
+	 
+public abstract class BaseDAO<T> implements IBaseDAO<T> {
+ 
+	 
+	public void save(PessoaVO contato){
+	 
+	 /*
+	 * Isso é uma sql comum, os ? são os parâmetros que nós vamos adicionar
+	 * na base de dados
+	 */
+		try(Connection conn = ConnectionFactory.createConnectionToMySQL()){
+			 
+			 //Cria um PreparedStatment, classe usada para executar a query
+			 pstm = conn.prepareStatement(sql);
+			 
+			 //Adiciona o valor do primeiro parâmetro da sql
+			 pstm.setString(1, contato.getNome());
+			 //Adicionar o valor do segundo parâmetro da sql
+			 pstm.setInt(2, contato.getIdade());
+			 //Adiciona o valor do terceiro parâmetro da sql
+			 pstm.setDate(3, new Date(contato.getDataCadastro().getTime()));
+			 
+			 //Executa a sql para inserção dos dados
+			 pstm.execute();
+		 
+		 String sql = "INSERT INTO contatos(nome,idade,dataCadastro)" +
+		 " VALUES(?,?,?)";
+		 
+		 Connection conn = null;
+		 PreparedStatement pstm = null;
+		}
+		
+	 
+	 
+	 }
+}

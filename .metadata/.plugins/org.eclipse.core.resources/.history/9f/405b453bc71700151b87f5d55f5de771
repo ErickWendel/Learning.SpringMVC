@@ -1,0 +1,18 @@
+package com.callsystem.model.enums;
+ 
+
+public enum PerfilEnum {
+	ADMINISTRADOR(1), 
+	USUARIO(2);
+	
+	private int perfil;
+	
+	
+	PerfilEnum(int perfil){
+		this.perfil = perfil;
+	}
+	
+	public int getPerfil(){
+		return perfil;
+	}
+}

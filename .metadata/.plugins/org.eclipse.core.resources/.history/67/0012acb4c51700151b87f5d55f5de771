@@ -1,0 +1,100 @@
+package com.callsystem.controllers;
+ 
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+ 
+
+import com.callsystem.dao.RamalDAO; 
+import com.callsystem.model.PessoaVO;
+import com.callsystem.model.RamalVO;
+
+@Controller
+public class RamaisController {
+
+	@RequestMapping(value = "/cadastrarRamal", method = RequestMethod.GET)
+	public String cadastrarRamal() {
+		
+		return "cadastrarRamais";
+	}
+	@RequestMapping(value = "/cadastrarRamal", method = RequestMethod.POST)
+	public String cadastrarRamal(String codigo, String numeroRamal) {
+		try {
+			if(codigo != null && numeroRamal != null){
+				RamalDAO dao = new RamalDAO();
+				RamalVO ramal = new RamalVO();
+				ramal.setNumero(numeroRamal);
+				PessoaVO pessoa = new PessoaVO();
+				pessoa.setId((Integer.parseInt(codigo)));
+				ramal.setPessoa(pessoa);
+				dao.cadastrar(ramal);
+			}
+			return "redirect:/listarUsuarios";
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return "redirect:listarUsuarios";
+		}
+		 
+	}
+//	@RequestMapping(value = "/cadastrarRamal/{idUsuario}", method = RequestMethod.POST)
+//	public String cadastrarRamal(@PathVariable(value="idUsuario") int idUsuario) {
+//		try {
+//			if(idUsuario != 0){
+//				RamalDAO dao = new RamalDAO();
+//				RamalVO ramal = new RamalVO();
+//				ramal.setNumero(numeroRamal);
+//				PessoaVO pessoa = new PessoaVO();
+//				pessoa.setId((Integer.parseInt(codigo)));
+//				ramal.setPessoa(pessoa);
+//				dao.cadastrar(ramal);
+//			}
+//			return "cadastrarRamais";
+//			
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
+//			return "redirect:listarRamais";
+//		}
+//	}
+	
+	@RequestMapping(value = "/deletarRamal/{IdRamal}", method = RequestMethod.GET)
+	public String deletarRamal(@PathVariable(value="IdRamal") int id) {
+		RamalDAO dao = new RamalDAO();
+		try {
+			if(id != 0){
+				dao.deletar(id);
+			}
+			
+			return "redirect:callsystem/listarUsuarios";
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return "redirect:callsystem/listarUsuarios";
+		} 
+	}
+	
+
+	@RequestMapping(value = "/relatorioItensCadastrados", method = RequestMethod.GET)
+	public ModelAndView relatorioItensCadastrados() {
+		try { 
+			List<RamalVO> ramais = null; 
+			ramais = new RamalDAO().listar();
+			
+			ModelAndView model = new ModelAndView("relatorioItensCadastrados");
+			
+			model.addObject("ramais", ramais);
+			
+
+			return model;
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+	
+}

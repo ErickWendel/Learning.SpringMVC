@@ -1,10 +1,9 @@
 <jsp:include page="/WEB-INF/views/shared/menu.jsp"></jsp:include>
 <script>
-	function goBack(){
-		 
-		window.history.back();
-		}
+	function goBack() {
 
+		window.history.back();
+	}
 </script>
 <div id="content" class="app-content" role="main">
 	<div class="app-content-body ">
@@ -14,19 +13,22 @@
 					<div class="panel panel-default">
 						<div class="panel-heading font-bold">Cadastrar Ramal</div>
 						<div class="panel-body">
-							<form role="form">
+							<form role="form" action="/callsystem/cadastrarRamal"
+								method="POST">
 								<div class="form-group">
 									<label>Usuario</label> <input class="form-control" type="text"
-										placeholder="Erick Wendel" disabled="">
+										name="codigo" placeholder="Digite o codigo de usuario"
+										onload="init()">
 								</div>
 								<div class="form-group">
-									<label>Numero</label> <input type="email" class="form-control"
-										placeholder="Digite o número do Ramal">
+									<label>Numero</label> <input type="number" class="form-control"
+										name="numeroRamal" placeholder="Digite o número do Ramal">
 								</div>
 
 								<button type="submit" class="btn btn-sm btn-primary">Enviar</button>
-								<input type="button" onclick="goBack()" class="btn btn-sm btn-info"  value="Voltar"/>
-								 
+								<input type="button" onclick="goBack()"
+									class="btn btn-sm btn-info" value="Voltar" />
+
 							</form>
 						</div>
 					</div>
@@ -35,6 +37,12 @@
 		</div>
 	</div>
 </div>
+<script>
+	if (localStorage['id'] != undefined) {
+		document.getElementsByName('codigo')[0].value = localStorage['id']
 
+		localStorage.clear();
+	}
+</script>
 
 <jsp:include page="/WEB-INF/views/shared/footer.jsp"></jsp:include>

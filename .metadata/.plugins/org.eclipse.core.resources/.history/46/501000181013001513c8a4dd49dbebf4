@@ -1,0 +1,9 @@
+package com.callsystem.dao.contracts; 
+import com.callsystem.model.PessoaVO;
+
+public interface IPessoa{
+	void cadastrar(PessoaVO pessoa);
+	PessoaVO pesquisarPorId(int id);
+	PessoaVO getLogin(); 
+	
+}

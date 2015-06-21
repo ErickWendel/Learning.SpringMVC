@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 
 
-<link rel="icon" href="${pageContext.request.contextPath}/resources/icon.png">
+<link rel="icon" href="${pageContext.request.contextPath}/resources/img/icon.png">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	type="text/css" />
@@ -72,52 +72,13 @@
 				class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
 				<!-- buttons -->
 				<div class="nav navbar-nav hidden-xs">
-					<a href="#" class="btn no-shadow navbar-btn"
-						ui-toggle="app-aside-folded" target=".app"> <i
-						class="fa fa-dedent fa-fw text"></i> <i
-						class="fa fa-indent fa-fw text-active"></i>
-					</a> <a href="#" class="btn no-shadow navbar-btn" ui-toggle="show"
-						target="#aside-user"> <i class="icon-user fa-fw"></i>
-					</a>
+					
 				</div>
 				<!-- / buttons -->
 
 				<!-- link and dropdown -->
 				<ul class="nav navbar-nav hidden-sm">
-					<li class="dropdown pos-stc"><a href="#"
-						data-toggle="dropdown" class="dropdown-toggle"> <span>Cadastros</span>
-							<span class="caret"></span>
-					</a>
-						<div class="dropdown-menu wrapper w-full bg-white">
-							<div class="row">
-								<div class="col-sm-4">
-									<div class="m-l-xs m-t-xs m-b-xs font-bold">
-										Paginas <span class="badge badge-sm bg-success">10</span>
-									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<ul class="list-unstyled l-h-2x">
-												<li><a href><i
-														class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Cadastrar
-														Ramais</a></li>
-												<li><a href><i
-														class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Cadastrar
-														Usuarios</a></li>
-												<li><a href><i
-														class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Listar
-														Usuarios</a></li>
-												<li><a href><i
-														class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Listar
-														Ramais</a></li>
-											</ul>
-										</div>
-
-									</div>
-								</div>
-
-
-							</div>
-						</div></li>
+					
 					<li class="dropdown"><a href="#" data-toggle="dropdown"
 						class="dropdown-toggle"> <i
 							class="fa fa-fw fa-plus visible-xs-inline-block"></i> <span
@@ -125,20 +86,19 @@
 					</a>
 						<ul class="dropdown-menu" role="menu">
 							<li>
-								<a href="#" translate="header.navbar.new.PROJECT">Cadastrar Ramais</a>
+								<a href="${pageContext.request.contextPath}/cadastrarUsuarios" translate="header.navbar.new.PROJECT">Cadastrar Usuarios</a>
 							</li>
 							<li class="divider"></li>
-							<li>
-								<a href> <span translate="header.navbar.new.TASK">Cadastrar	Usuarios</span></a>
+							 <li>
+								<a href="${pageContext.request.contextPath}/cadastrarRamal" translate="header.navbar.new.PROJECT">Cadastrar Ramais</a>
 							</li>
 							<li class="divider"></li>
-							<li><a href translate="header.navbar.new.USER">Listar
+							<li><a href="${pageContext.request.contextPath}/listarUsuarios" translate="header.navbar.new.USER">Listar
 														Usuarios</a></li>
 							<li class="divider"></li>
 							
-							<li><a href> <span class="badge bg-danger pull-right">4</span>
-									<span translate="header.navbar.new.EMAIL">Listar
-														Ramais</span>
+							<li><a href="${pageContext.request.contextPath}/relatorioItensCadastrados">
+									<span translate="header.navbar.new.EMAIL">Relatorio de itens cadastrados</span>
 							</a></li>
 						</ul></li>
 				</ul>
@@ -155,7 +115,10 @@
 								<img
 								src="${pageContext.request.contextPath}/resources/img/avatar.png"
 								alt="..."> <i class="on md b-white bottom"></i>
-						</span> <span class="hidden-sm hidden-md">Erick Wendel</span> <b
+						</span> <span class="hidden-sm hidden-md" id="nameLogin" >
+								
+						
+						</span> <b
 							class="caret"></b>
 					</a> <!-- dropdown -->
 						<ul class="dropdown-menu animated fadeInRight w">
@@ -170,3 +133,9 @@
 		</header>
 		<!-- / header -->
 		<section>
+		<script>
+		$('#nameLogin').text(sessionStorage["name"]);
+		
+
+		</script>
+		

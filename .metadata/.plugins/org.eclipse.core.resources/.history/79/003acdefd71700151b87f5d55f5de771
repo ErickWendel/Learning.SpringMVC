@@ -1,0 +1,25 @@
+$(function (){
+	
+	function init(){
+		sessionStorage.clear(); 
+	} 
+
+	init();
+});
+
+$(function() {
+	$("#btn-login").click(function() {
+		var email = $("#Email").val();
+		var senha = $("#Senha").val();
+		if (email != "" && senha != "") {
+			sessionStorage["auth"] = btoa(email + "/" + senha);
+			 
+		}
+	});
+	
+	function loginDirect(){
+		sessionStorage["auth"] = btoa(email + "/" + senha);
+		location.href="/callsystem/listarUsuarios"
+	}
+
+});

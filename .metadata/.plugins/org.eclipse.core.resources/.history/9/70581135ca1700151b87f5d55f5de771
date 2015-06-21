@@ -1,0 +1,81 @@
+package com.callsystem.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller; 
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.callsystem.dao.PessoaDAO;
+import com.callsystem.dao.RamalDAO;
+import com.callsystem.model.PessoaVO;
+import com.callsystem.model.RamalVO;
+
+ 
+
+@Controller
+public class UsuarioController {
+
+	@RequestMapping(value = "/cadastrarUsuarios", method = RequestMethod.GET)
+	public String cadastrarUsuarios() {
+	 
+		return "cadastrarUsuarios";
+	}
+	
+	@RequestMapping(value = "/cadastrarUsuarios", method = RequestMethod.POST)
+	public String cadastrarUsuarios(@ModelAttribute("usuario") PessoaVO usuario) {
+		try {
+			PessoaDAO pessoa = new PessoaDAO();
+			pessoa.cadastrar(usuario);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		 
+		return "redirect:listarUsuarios";
+	}
+
+	
+	@RequestMapping(value = "/listarUsuarios", method = RequestMethod.GET)
+	public ModelAndView listarUsuarios() {
+		try { 
+			List<RamalVO> ramais = null;
+			List<PessoaVO> pessoas = new PessoaDAO().listar();
+			ramais = new RamalDAO().listar();
+			for (RamalVO ramalVO : ramais) {
+				for (PessoaVO pessoa : pessoas) {
+					if (ramalVO.getPessoa().getId() == pessoa.getId()) {
+						ramalVO.setPessoa(pessoa);
+					}
+					if(ramalVO.getPessoa().getId() == 99999){
+						ramalVO.setPessoa(pessoa);
+					}
+				}
+			}
+			ModelAndView model = new ModelAndView("listarUsuarios");
+			if (ramais.size() == 0) {
+				ramais =  new ArrayList<RamalVO>();
+				
+				for (PessoaVO pessoaVO : pessoas) {
+					RamalVO ramal = new RamalVO();
+					ramal.setNumero("0");
+					ramal.setId(99999);
+					ramal.setPessoa(pessoaVO);
+					ramais.add(ramal);
+				}
+				
+			}
+			model.addObject("ramais", ramais);
+			
+
+			return model;
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+	
+}

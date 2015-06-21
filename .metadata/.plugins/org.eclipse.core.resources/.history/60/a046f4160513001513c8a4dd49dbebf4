@@ -1,0 +1,67 @@
+package com.callsystem.dao;
+
+import java.sql.Connection; 
+import java.sql.PreparedStatement;
+
+import java.sql.ResultSet;
+
+import com.callsystem.database.ConnectionFactory; 
+import com.callsystem.model.PessoaVO; 
+
+public class PessoaDAO {
+
+	PreparedStatement prepare = null;
+	Connection conexao = null;
+	public void cadastrar(PessoaVO PessoaVO) throws Exception{
+
+		String sql = "INSERT INTO tb_usuario( DS_NOME , DS_EMAIL , DS_SENHA) VALUES(?,?,?)";
+		try(Connection conexao = ConnectionFactory.createConnectionToMySQL()) { 
+			prepare = conexao.prepareStatement(sql);			
+			prepare.setString(1, PessoaVO.getNome());  
+			prepare.setString(2, PessoaVO.getEmail());  
+			prepare.setString(3, PessoaVO.getSenha());  
+			prepare.setString(4, PessoaVO.getPerfil().name());  
+
+			prepare.execute();
+
+		} 
+
+	}
+
+	public PessoaVO pesquisarPorId(int id) throws Exception{  
+		try(Connection conexao = ConnectionFactory.createConnectionToMySQL()) { 
+			prepare = conexao.prepareStatement("select * from tb_usuario where id =?");			
+			ResultSet rs = prepare.executeQuery();  
+
+			PessoaVO contato = new PessoaVO();  
+			contato.setId(rs.getInt("ID"));  
+			contato.setNome(rs.getString("DS_NOME"));  
+			contato.setEmail(rs.getString("DS_EMAIL"));  
+			contato.setSenha(rs.getString("DS_SENHA"));  
+
+			prepare.execute();
+
+		} 
+		PreparedStatement stmt = this.conexao  
+				.prepareStatement("=" + id);  
+
+
+
+		return contato;  
+
+
+	}  
+
+	public PessoaVO getLogin(String usuario, String senha){
+		PreparedStatement stmt = this.conexao.prepareStatement("select * from tb_usuario where id = ?");  
+		ResultSet rs = stmt.executeQuery();  
+
+		PessoaVO contato = new PessoaVO();  
+		contato.setId(rs.getInt("ID"));  
+		contato.setNome(rs.getString("DS_NOME"));  
+		contato.setEmail(rs.getString("DS_EMAIL"));  
+		contato.setSenha(rs.getString("DS_SENHA"));  
+
+		return contato;
+	}
+}

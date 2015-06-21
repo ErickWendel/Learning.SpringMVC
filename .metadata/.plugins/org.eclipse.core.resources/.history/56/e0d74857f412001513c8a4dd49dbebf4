@@ -1,0 +1,14 @@
+package com.callsystem.dao.base;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.callsystem.database.ConnectionFactory;
+
+public abstract class BaseDAO<T> implements IBaseDAO<T> {
+	
+	
+}

@@ -1,0 +1,12 @@
+package com.callsystem.dao.contracts;
+
+import java.util.List;
+
+import com.callsystem.base.Base;
+import com.callsystem.model.RamalVO;
+
+public interface IRamal  {
+	RamalVO pesquisarPorId(int id) throws Exception;
+	List<RamalVO> getRamais() throws Exception;
+	void cadastrar(RamalVO RamalVO) throws Exception;
+}

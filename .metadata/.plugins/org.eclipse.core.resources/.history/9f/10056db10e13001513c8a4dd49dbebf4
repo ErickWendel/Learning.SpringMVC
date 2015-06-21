@@ -1,0 +1,110 @@
+package com.callsystem.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+
+import com.callsystem.database.ConnectionFactory;
+import com.callsystem.model.PessoaVO;
+import com.callsystem.model.RamalVO; 
+import com.callsystem.model.enums.PerfilEnum;
+
+public class RamalDAO{
+
+	PreparedStatement prepare = null;
+	Connection conexao = null;
+	public void cadastrar(RamalVO RamalVO) throws Exception{
+
+		String sql = "INSERT INTO tb_ramal(DS_NUMERO, ID_USUARIO) VALUES(?,?)";
+		try(Connection conexao = ConnectionFactory.createConnectionToMySQL()) { 
+			prepare = conexao.prepareStatement(sql);	
+			prepare.setString(1, RamalVO.getNumero());
+			prepare.setInt(2, RamalVO.getPessoa().getId()); 
+
+			prepare.execute();
+
+		} 
+
+	}
+
+	public RamalVO pesquisarPorId(int id) throws Exception{  
+		try(Connection conexao = ConnectionFactory.createConnectionToMySQL()) { 
+			prepare = conexao.prepareStatement("select * from `tb_ramal` where id =?");			
+			ResultSet rs = prepare.executeQuery();  
+
+			RamalVO contato = new RamalVO();  
+			contato.setId(rs.getInt("ID"));  
+			contato.setNumero(rs.getString("DS_NOME"));  
+			PessoaVO pessoa = new PessoaVO();
+			pessoa.setId(rs.getInt("ID"));
+			contato.setPessoa(pessoa);
+
+			prepare.execute();
+
+			return contato;  
+		}  
+	}  
+ 
+	public List<RamalVO> getRamais(){
+
+		String sql = "SELECT * FROM `tb_ramal`";
+
+		List<RamalVO> ramais = new ArrayList<RamalVO>();
+
+		Connection conn = null;
+		PreparedStatement pstm = null; 
+		ResultSet rset = null;
+
+		try {
+			conn = ConnectionFactory.createConnectionToMySQL();
+
+			pstm = conn.prepareStatement(sql);
+
+			rset = pstm.executeQuery();
+
+			//Enquanto existir dados no banco de dados, faça
+			while(rset.next()){
+
+				RamalVO contato = new RamalVO();
+ 
+				contato.setId(rset.getInt("ID"));
+ 
+				contato.setNumero(rset.getString("DS_NUMERO"));
+				PessoaVO p = new PessoaVO();
+				
+				contato.setPessoa(p.setId(rset.getInt("idade")));
+
+				//Recupera a data do banco e atribui ela ao objeto
+				contato.setDataCadastro(rset.getDate("dataCadastro"));
+
+				//Adiciono o contato recuperado, a lista de contatos
+				ramais.add(contato);
+			}
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
+		return contatos;
+	}
+
+
+public static void main(String[] args) throws Exception{
+
+	RamalVO p = new RamalVO();
+	p.setEmail("erick.rocknroll@gmail.com");
+	p.setNome("Erick");
+	p.setPerfil(PerfilEnum.ADMINISTRADOR);
+	p.setSenha("123");
+	new PessoaDAO().cadastrar(p);
+
+
+}
+
+
+}
